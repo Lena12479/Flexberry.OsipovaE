@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-osipova-e-отпуск-материала-e",
+  "editForm": "i-i-s-osipova-e-отпуск-материала-e",
+  "external": false,
+  "caption": "Отпуск материала",
+  "name": "IISOsipovaEОтпускМатериалаL",
+  "className": "ОтпускМатериалаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-osipova-e-отпуск-материала",
+      "modelProjection": "ОтпускМатериалаL"
+    }
+  ]
+}

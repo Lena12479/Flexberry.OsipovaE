@@ -1,0 +1,196 @@
+﻿{
+  "name": "IISOsipovaEАктПриемки",
+  "modelName": "i-i-s-osipova-e-акт-приемки",
+  "className": "АктПриемки",
+  "nameSpace": "IIS.OsipovaE",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаПриемки",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номерАкта",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "поставщики",
+      "relatedTo": "i-i-s-osipova-e-поставщики",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-osipova-e-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "принятыйМат",
+      "relatedTo": "i-i-s-osipova-e-принятый-мат",
+      "inverse": "актПриемки"
+    }
+  ],
+  "projections": [
+    {
+      "name": "АктПриемкиE",
+      "modelName": "i-i-s-osipova-e-акт-приемки",
+      "attrs": [
+        {
+          "name": "номерАкта",
+          "caption": "Номер акта",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаПриемки",
+          "caption": "Дата приемки",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Поставщики",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "поставщики",
+          "relatedTo": "i-i-s-osipova-e-поставщики",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "фИОсотрудника",
+              "caption": "Ф и осотрудника",
+              "hidden": true,
+              "index": 3
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Ф и осотрудника",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-osipova-e-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ПринятыйМатE",
+          "caption": "Принятый мат",
+          "name": "принятыйМат",
+          "relatedTo": "i-i-s-osipova-e-принятый-мат",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "АктПриемкиL",
+      "modelName": "i-i-s-osipova-e-акт-приемки",
+      "attrs": [
+        {
+          "name": "номерАкта",
+          "caption": "Номер акта",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "датаПриемки",
+          "caption": "Дата приемки",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Поставщики",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "поставщики",
+          "relatedTo": "i-i-s-osipova-e-поставщики",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИОсотрудника",
+              "caption": "Ф и осотрудника",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Ф и осотрудника",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-osipova-e-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,169 @@
+﻿{
+  "name": "IISOsipovaEЗаказ",
+  "modelName": "i-i-s-osipova-e-заказ",
+  "className": "Заказ",
+  "nameSpace": "IIS.OsipovaE",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "адресЗаказа",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номерЗаказа",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "способПолучения",
+      "type": "i-i-s-osipova-e-способ-доставки",
+      "flexberryType": "СпособДоставки",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "фИОзаказчика",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "номенклатура",
+      "relatedTo": "i-i-s-osipova-e-номенклатура",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ЗаказE",
+      "modelName": "i-i-s-osipova-e-заказ",
+      "attrs": [
+        {
+          "name": "номерЗаказа",
+          "caption": "Номер заказа",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИОзаказчика",
+          "caption": "Ф и озаказчика",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "адресЗаказа",
+          "caption": "Адрес заказа",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "способПолучения",
+          "caption": "Способ получения",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-osipova-e-номенклатура",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ЗаказL",
+      "modelName": "i-i-s-osipova-e-заказ",
+      "attrs": [
+        {
+          "name": "номерЗаказа",
+          "caption": "Номер заказа",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИОзаказчика",
+          "caption": "Ф и озаказчика",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "адресЗаказа",
+          "caption": "Адрес заказа",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "способПолучения",
+          "caption": "Способ получения",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-osipova-e-номенклатура",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

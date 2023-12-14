@@ -1,0 +1,120 @@
+﻿{
+  "name": "IISOsipovaEПринятыйМат",
+  "modelName": "i-i-s-osipova-e-принятый-мат",
+  "className": "ПринятыйМат",
+  "nameSpace": "IIS.OsipovaE",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "колво",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номерПозиции",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "номенклатура",
+      "relatedTo": "i-i-s-osipova-e-номенклатура",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "склад",
+      "relatedTo": "i-i-s-osipova-e-склад",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "актПриемки",
+      "relatedTo": "i-i-s-osipova-e-акт-приемки",
+      "inverse": "принятыйМат"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ПринятыйМатE",
+      "modelName": "i-i-s-osipova-e-принятый-мат",
+      "attrs": [
+        {
+          "name": "номерПозиции",
+          "caption": "Номер позиции",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "колво",
+          "caption": "Колво",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Номенклатура",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "номенклатура",
+          "relatedTo": "i-i-s-osipova-e-номенклатура",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Склад",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "имяСклада",
+              "caption": "Имя склада",
+              "hidden": true,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Имя склада",
+          "name": "склад",
+          "relatedTo": "i-i-s-osipova-e-склад",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

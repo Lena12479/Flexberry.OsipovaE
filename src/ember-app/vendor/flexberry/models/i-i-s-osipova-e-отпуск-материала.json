@@ -1,0 +1,179 @@
+﻿{
+  "name": "IISOsipovaEОтпускМатериала",
+  "modelName": "i-i-s-osipova-e-отпуск-материала",
+  "className": "ОтпускМатериала",
+  "nameSpace": "IIS.OsipovaE",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаПроводки",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "заказ",
+      "relatedTo": "i-i-s-osipova-e-заказ",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-osipova-e-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОтпускМатериалаE",
+      "modelName": "i-i-s-osipova-e-отпуск-материала",
+      "attrs": [
+        {
+          "name": "датаПроводки",
+          "caption": "Дата проводки",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Заказ",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "номерЗаказа",
+              "caption": "Номер заказа",
+              "hidden": false,
+              "index": 1
+            },
+            {
+              "name": "фИОзаказчика",
+              "caption": "Ф и озаказчика",
+              "hidden": true,
+              "index": 2
+            },
+            {
+              "name": "адресЗаказа",
+              "caption": "Адрес заказа",
+              "hidden": false,
+              "index": 3
+            },
+            {
+              "name": "способПолучения",
+              "caption": "Способ получения",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номер заказа",
+          "name": "заказ",
+          "relatedTo": "i-i-s-osipova-e-заказ",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [
+            {
+              "name": "фИОсотрудника",
+              "caption": "Ф и осотрудника",
+              "hidden": true,
+              "index": 5
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Ф и осотрудника",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-osipova-e-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ОтпускМатериалаL",
+      "modelName": "i-i-s-osipova-e-отпуск-материала",
+      "attrs": [
+        {
+          "name": "датаПроводки",
+          "caption": "Дата проводки",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Заказ",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИОзаказчика",
+              "caption": "Ф и озаказчика",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Ф и озаказчика",
+          "name": "заказ",
+          "relatedTo": "i-i-s-osipova-e-заказ",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИОсотрудника",
+              "caption": "Ф и осотрудника",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Ф и осотрудника",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-osipova-e-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

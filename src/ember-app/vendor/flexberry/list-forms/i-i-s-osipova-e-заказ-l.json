@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-osipova-e-заказ-e",
+  "editForm": "i-i-s-osipova-e-заказ-e",
+  "external": false,
+  "caption": "Заказ",
+  "name": "IISOsipovaEЗаказL",
+  "className": "ЗаказL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-osipova-e-заказ",
+      "modelProjection": "ЗаказL"
+    }
+  ]
+}

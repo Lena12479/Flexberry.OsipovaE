@@ -1,0 +1,78 @@
+<h3 class="ui header">{{t "forms.i-i-s-osipova-e-отпуск-материала-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-osipova-e-отпуск-материала-e.датаПроводки-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаПроводки
+      class=(if (v-get validationModel "датаПроводки" "isInvalid") "error")
+      data-test-i-i-s-osipova-e-отпуск-материала-e-датаПроводки=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаПроводки" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.заказ.номерЗаказа
+      class=(if (v-get validationModel.заказ "номерЗаказа" "isInvalid") "error")
+      label=(t "forms.i-i-s-osipova-e-отпуск-материала-e.заказ.номерЗаказа-caption")
+      data-test-i-i-s-osipova-e-отпуск-материала-e-заказ-номерЗаказа=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.заказ "номерЗаказа" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.заказ.адресЗаказа
+      class=(if (v-get validationModel.заказ "адресЗаказа" "isInvalid") "error")
+      label=(t "forms.i-i-s-osipova-e-отпуск-материала-e.заказ.адресЗаказа-caption")
+      data-test-i-i-s-osipova-e-отпуск-материала-e-заказ-адресЗаказа=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.заказ "адресЗаказа" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-osipova-e-отпуск-материала-e-заказ-способПолучения="true">
+    <label>{{t "forms.i-i-s-osipova-e-отпуск-материала-e.заказ.способПолучения-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-osipova-e-способ-доставки")
+      value=model.заказ.способПолучения
+      class=(if (v-get validationModel.заказ "способПолучения" "isInvalid") "error")
+      readonly=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.заказ "способПолучения" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.сотрудники.должность
+      class=(if (v-get validationModel.сотрудники "должность" "isInvalid") "error")
+      label=(t "forms.i-i-s-osipova-e-отпуск-материала-e.сотрудники.должность-caption")
+      data-test-i-i-s-osipova-e-отпуск-материала-e-сотрудники-должность=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.сотрудники "должность" "message")}}
+  </div>
+</form>

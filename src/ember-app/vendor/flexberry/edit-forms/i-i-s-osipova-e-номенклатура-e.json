@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Номенклатура",
+  "name": "IISOsipovaEНоменклатураE",
+  "className": "НоменклатураE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-osipova-e-номенклатура",
+      "modelProjection": "НоменклатураE"
+    }
+  ]
+}

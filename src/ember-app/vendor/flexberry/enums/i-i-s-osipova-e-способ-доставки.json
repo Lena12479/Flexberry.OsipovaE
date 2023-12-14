@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.OsipovaE",
+  "className": "СпособДоставки",
+  "enumObjects": {
+    "Курьер": "",
+    "Самовывоз": ""
+  }
+}
